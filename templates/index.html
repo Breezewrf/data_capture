@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Data Capture System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="videos">
+
+<div class="video-container">
+<h2>Video 1</h2>
+<video src="{{ url_for('stream1') }}" controls></video>
+</div>
+
+<div class="video-container">
+<h2>Video 2</h2>
+<video src="{{ url_for('stream2') }}" controls></video>
+</div>
+
+<div class="video-container">
+<h2>Video 3</h2>
+<video src="{{ url_for('stream3') }}" controls></video>
+</div>
+
+</div>
+
+<style>
+.videos {
+  display: flex;
+}
+
+.video-container {
+  flex: 1;
+  padding: 20px;
+}
+</style>
+    <div class="button-container">
+        <button id="start-recording-button">Start Recording</button>
+        <button id="stop-recording-button">Stop Recording and Save</button>
+    </div>
+    <script>
+      const startRecordingButton = document.getElementById('start-recording-button');
+      const stopRecordingButton = document.getElementById('stop-recording-button');
+      startRecordingButton.addEventListener('click', () => {
+
+        startRecordingButton.style.display = 'inline-block';
+        startRecordingButton.innerHTML = 'Recording';
+      });
+      stopRecordingButton.addEventListener('click', () => {
+        stopRecordingButton.style.display = 'inline-block';
+        stopRecordingButton.innerHTML = 'Stop Recording and Save';
+        startRecordingButton.style.display = 'inline-block';
+        startRecordingButton.innerHTML = 'Start Recording';
+      });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
