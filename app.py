@@ -131,12 +131,6 @@ def start_recording():
     return 'Recording started'
 
 
-@app.route('/record', methods=['POST'])
-def record_audio():
-    # save_audio()
-    return 'Recorded audio successfully!'
-
-
 # 定义函数来获取已经录制的时间
 def get_elapsed_time():
     global start_time
