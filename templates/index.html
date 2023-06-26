@@ -6,24 +6,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div class="videos">
 
 <div class="video-container">
-<h2>Video 1</h2>
-<video src="{{ url_for('stream1') }}" controls></video>
-</div>
+        <h2>Video 1</h2>
+        <img src="{{ url_for('stream1') }}" alt="Video 1">
+    </div>
 
 <div class="video-container">
-<h2>Video 2</h2>
-<video src="{{ url_for('stream2') }}" controls></video>
-</div>
+        <h2>Video 2</h2>
+        <img src="{{ url_for('stream2') }}" alt="Video 2">
+    </div>
 
 <div class="video-container">
-<h2>Video 3</h2>
-<video src="{{ url_for('stream3') }}" controls></video>
-</div>
+        <h2>Video 3</h2>
+        <img src="{{ url_for('stream3') }}" alt="Video 3">
+    </div>
 
-</div>
+<div class="button-container">
 
 <style>
 .videos {
